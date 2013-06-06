@@ -3,10 +3,8 @@ JBoss Rock Star Template Project
 
 This project is for getting you started with oranizing your demos in a consistent manner.
 
-The basis of a talk given at JUDCon United States 2013.
-
-Do you want to be a JBoss Rock Star?
-------------------------------------
+Do you want to be a JBoss Rock Star? (JUDCon USA 2013)
+------------------------------------------------------
 
 So you have seen the perfect JBoss project for your current development problem. Now what?
 You have seen amazing demos done by the core developers of these projects, but you want to create your own awesome demo to convince

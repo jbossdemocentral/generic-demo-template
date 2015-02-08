@@ -4,11 +4,9 @@ You have seen amazing demos done by JBoss Technology Evangelists, but you want t
 own awesome demo to convince your friends, team and boss that your project is exactly what the
 doctor ordered? 
 
-This template will provide the tools to setup simple, conisstent and easily 
-repeatable demo projects like those found on [JBoss Demo Central](https://jbossdemocentral.github.io); 
-[JBoss BRMS](https://jbossdemocentral.github.io/#/brms), 
-[JBoss BPM Suite](https://jbossdemocentral.github.io/#/bpms) 
-and [JBoss Fuse](https://jbossdemocentral.github.io/#/fuse).
+This template will provide the tools to setup simple, conisstent and easily repeatable demo projects
+like those found on [JBoss Demo Central](https://jbossdemocentral.github.io).
+
 
 Getting started with this template
 ----------------------------------

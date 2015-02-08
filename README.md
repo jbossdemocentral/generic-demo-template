@@ -14,9 +14,10 @@ Getting started with this template
 ----------------------------------
 1. [Download and unzip.](https://github.com/eschabell/jboss-demo-template/archive/master.zip)
 
-2. run init.sh to populate a project, see REAME files that are generated for how to use.
-
-3. done, easy peasy!
+2. run init.sh to populate a project, see REAME files that are generated for how to use:
+   ```
+   $ ./init.sh PROJECTNAME
+   ```
 
 
 Supporting Articles

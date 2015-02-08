@@ -23,6 +23,8 @@ Supporting Articles
 
 Released versions
 -----------------
+v0.3 - added full project generation and pretty output.
+
 v0.2 - cleaned up and generified for all projects.
 
 v0.1 - initial release.

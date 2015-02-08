@@ -2,12 +2,8 @@ JBoss Demo Template Project
 ===========================
 You have seen amazing demos done by JBoss Technology Evangelists, but you want to create your 
 own awesome demo to convince your friends, team and boss that your project is exactly what the
-doctor ordered. 
-
-This template will help you to become a local JBoss Rock Star. 
-
-It provides you with the tools to setup simple, conisstent and easily repeatable demo projects
-and provide you with guidelines to allow you to consistently amaze and dazzle. 
+doctor ordered. This template will provide the tools to setup simple, conisstent and easily 
+repeatable demo projects and provide guidelines to allow you to consistently amaze and dazzle. 
 
 
 Getting started with this template

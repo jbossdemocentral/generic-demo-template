@@ -5,6 +5,7 @@
 ## Creates Demo Project Automagically! ##
 ##                                     ##
 #########################################
+clear
 
 # no args need to show help.
 if [ $# -ne 1 ]
@@ -16,15 +17,46 @@ then
 	exit 
 fi
 
+echo
+echo
+echo "#######################################################################################"
+echo "##                                                                                   ##"   
+echo "##  Setting up your project.                                                         ##"
+echo "##                                                                                   ##"   
+echo "##                                                                                   ##"   
+echo "##  ####  #####  #   #   ####    ##### #####  #   #  ####  #      ###  #####  #####  ##"
+echo "##  #   # #     # # # # #    #     #   #     # # # # #   # #     #   #   #    #      ##"
+echo "##  #   # ###   #  #  # #    #     #   ###   #  #  # ####  #     #####   #    ###    ##"
+echo "##  #   # #     #     # #    #     #   #     #     # #     #     #   #   #    #      ##"
+echo "##  ####  ##### #     #  ####      #   ##### #     # #     ##### #   #   #    #####  ##"
+echo "##                                                                                   ##"   
+echo "##                                                                                   ##"   
+echo "##  brought to you by,                                                               ##"   
+echo "##                     Eric D. Schabell (@ericschabell)                              ##"
+echo "##                                                                                   ##"   
+echo "#######################################################################################"
+echo
+echo
+
+# check if dir for project exists.
+if [ -d $1 ]
+then
+	echo "Directory already exists for $1, please try again..."
+  echo
+  exit
+fi
+
+echo "  Setting up project $1:"
+echo
 # create project directory.
 echo
-echo "Created project directory."
+echo "   Created project directory."
 echo
 mkdir $1
 cd $1
 
 echo 
-echo "Adding main readme file."
+echo "   Adding main readme file."
 echo
 
 echo "JBoss $1 Quickstart Guide
@@ -53,7 +85,7 @@ See the tagged releases for the following versions of the product:
 
 # create dirs.
 echo
-echo "Creating installs directory and readme."
+echo "   Creating installs directory and readme."
 echo
 mkdir installs 
 echo 'In this directory you fill in this readme file to point the user
@@ -78,7 +110,7 @@ chmod +x <path-to-project>/installs/[insert-product-file].zip
 ' > installs/README
 
 echo
-echo "Creating projects directory and readme."
+echo "   Creating projects directory and readme."
 echo
 mkdir projects
 echo 'This directory is for putting your projects source code into. The install script 
@@ -91,7 +123,7 @@ would be copied into the JBoss application server.
 ' > projects/README
 
 echo
-echo "Creating support files directory and readme."
+echo "   Creating support files directory and readme."
 echo
 mkdir support
 echo 'Everything not held in the projects, installs, docs or root of your project 
@@ -102,7 +134,7 @@ Very important to keep the root of the template clean and consistent.
 ' > support/README
 
 echo
-echo "Creating documentation files directory and readme."
+echo "   Creating documentation files directory and readme."
 echo
 mkdir -p docs/demo-images
 echo 'This directory contains any project documentation and you can place images
@@ -111,7 +143,7 @@ root level Readme.md for nice visual displays on github.com.
 ' > docs/README
 
 echo 
-echo "Creating various .gitignores."
+echo "   Creating various .gitignores."
 echo
 echo 'target/
 .DS_Store
@@ -120,7 +152,7 @@ echo '.zip' > installs/.gitignore
 echo '.metadata' > projects/.gitignore
 
 echo 
-echo "Create example inital init.sh for installation of the project."
+echo "   Create example inital init.sh for installation of the project."
 echo
 echo '#!/bin/sh 
 # This is a generated example init for your project, just adjust as needed
@@ -231,7 +263,7 @@ echo' > init.sh
 
 
 echo 
-echo "Create example inital init.bat for windows installation of the project."
+echo "   Create example inital init.bat for windows installation of the project."
 echo
 echo '# This is a generated example window init bat file for your project, just adjust as needed
 # for your needs. It is not a complete setup but parts that give you a few
@@ -345,5 +377,7 @@ echo.
 echo' > init.bat
 
 echo
-echo You can new view your project directory setup in $1.
-echo
+echo "You can new view project $1:"
+echo "---------------"
+$1 | ls -l
+echo "---------------"

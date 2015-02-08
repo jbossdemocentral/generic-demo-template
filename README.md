@@ -24,9 +24,13 @@ None yet...
 
 Released versions
 -----------------
+v1.0 - Image added and final touches.
+
 v0.3 - added full project generation and pretty output.
 
 v0.2 - cleaned up and generified for all projects.
 
 v0.1 - initial release.
 
+
+![Cover Slide](https://raw.githubusercontent.com/eschabell/jboss-demo-template/master/cover.png)

@@ -1,7 +1,5 @@
 JBoss Demo Template Project
 ===========================
-So you have seen the perfect JBoss project for your current development problem. Now what?
-
 You have seen amazing demos done by JBoss Technology Evangelists, but you want to create your 
 own awesome demo to convince your friends, team and boss that your project is exactly what the
 doctor ordered. 

@@ -10,7 +10,7 @@ like those found on [JBoss Demo Central](https://jbossdemocentral.github.io).
 
 Getting started with this template
 ----------------------------------
-1. [Download and unzip.](https://github.com/eschabell/jboss-demo-template/archive/master.zip)
+1. [Download and unzip.](https://github.com/jbossdemocentral/jboss-demo-template/archive/master.zip)
 
 2. run init.sh to populate a project, see REAME files that are generated for how to use:
    ```
@@ -34,4 +34,4 @@ v0.2 - cleaned up and generified for all projects.
 v0.1 - initial release.
 
 
-![Cover Slide](https://raw.githubusercontent.com/eschabell/jboss-demo-template/master/cover.png)
+![Cover Slide](https://raw.githubusercontent.com/jbossdemocentral/jboss-demo-template/master/cover.png)

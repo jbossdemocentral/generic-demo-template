@@ -379,5 +379,5 @@ echo' > init.bat
 echo
 echo "You can new view project $1:"
 echo "---------------"
-$1 | ls -l
+echo $1 | ls -l
 echo "---------------"

@@ -20,7 +20,7 @@ Getting started with this template
 
 Supporting Articles
 -------------------
-None yet...
+[JBoss Evangelist - How To Create Simple, Consistent, Repeatable Demo Projects](http://www.schabell.org/2015/02/jboss-evangelist-howto-create-demo-projects.html)
 
 
 Released versions

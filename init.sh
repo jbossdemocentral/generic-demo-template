@@ -148,7 +148,8 @@ echo
 echo 'target/
 .DS_Store
 ' > .gitignore
-echo '.zip' > installs/.gitignore
+echo '*.zip' > installs/.gitignore
+echo '*.jar' > installs/.gitignore
 echo '.metadata' > projects/.gitignore
 
 echo 

@@ -172,7 +172,7 @@ echo '#!/bin/sh
 DEMO="YOUR-PROJECT-NAME-HERE"
 AUTHORS="YOUR-NAME-HERE"
 PROJECT="YOUR-GIT-URL-HERE"
-PRODUCT="JBoss BPM Suite"
+PRODUCT="YOUR-JBOSS-PRODUCT-HERE"
 JBOSS_HOME=./target/jboss-eap-6.1
 SERVER_DIR=$JBOSS_HOME/standalone/deployments/
 SERVER_CONF=$JBOSS_HOME/standalone/configuration/
@@ -180,8 +180,8 @@ SERVER_BIN=$JBOSS_HOME/bin
 SRC_DIR=./installs
 SUPPORT_DIR=./support
 PRJ_DIR=./projects
-BPMS=jboss-bpms-installer-6.0.3.GA-redhat-1.jar
-VERSION=6.0.3
+INSTALLER=JBOSS-PRODUCT-INSTALLER.jar
+VERSION=YOUR-VERSION-HERE
 
 # wipe screen.
 clear 
@@ -192,11 +192,11 @@ echo "##                                                              ##"
 echo "##  Setting up the ${DEMO}                           ##"
 echo "##                                                              ##"   
 echo "##                                                              ##"   
-echo "##     ####  ####   #   #      ### #   # ##### ##### #####      ##"
-echo "##     #   # #   # # # # #    #    #   #   #     #   #          ##"
-echo "##     ####  ####  #  #  #     ##  #   #   #     #   ###        ##"
-echo "##     #   # #     #     #       # #   #   #     #   #          ##"
-echo "##     ####  #     #     #    ###  ##### #####   #   #####      ##"
+echo "##    ##### #####  ###   ####  ####   ####  ##### #   #  ###    ##"
+echo "##      #   #   # #   # #     #       #   # #     ## ## #   #   ##"
+echo "##      #   ####  #   #  ###   ###    #   # ###   # # # #   #   ##"
+echo "##    # #   #   # #   #     #     #   #   # #     #   # #   #   ##"
+echo "##    ###   ####   ###  ####  ####    ####  ####  #   #  ###    ##"
 echo "##                                                              ##"   
 echo "##                                                              ##"   
 echo "##  brought to you by,                                          ##"   
@@ -210,7 +210,7 @@ echo
 command -v mvn -q >/dev/null 2>&1 || { echo >&2 "Maven is required but not installed yet... aborting."; exit 1; }
 
 # make some checks first before proceeding.	
-if [ -r $SRC_DIR/$BPMS ] || [ -L $SRC_DIR/$BPMS ]; then
+if [ -r $SRC_DIR/$INSTALLER ] || [ -L $SRC_DIR/$INSTALLER ]; then
 	echo Product sources are present...
 	echo
 else
@@ -220,7 +220,7 @@ else
 	exit
 fi
 
-# Move the old JBoss instance, if it exists, to the OLD position.
+# Remove old install if it exists.
 if [ -x $JBOSS_HOME ]; then
 	echo "  - existing JBoss product install removed..."
 	echo
@@ -230,18 +230,20 @@ fi
 # Run installer.
 echo Product installer running now...
 echo
-java -jar $SRC_DIR/$BPMS $SUPPORT_DIR/installation-bpms -variablefile $SUPPORT_DIR/installation-bpms.variables
+java -jar $SRC_DIR/$INSTALLER 
 
 if [ $? -ne 0 ]; then
 	echo Error occurred during $PRODUCT installation!
 	exit
 fi
 
-echo "  - setting up web services..."
+echo "Example section: configure your installation here..."
+echo
+
+echo "Example section: build your project sources here..."
 echo
 mvn clean install -f $PRJ_DIR/pom.xml
-cp -r $PRJ_DIR/acme-demo-flight-service/target/acme-flight-service-1.0.war $SERVER_DIR
-cp -r $PRJ_DIR/acme-demo-hotel-service/target/acme-hotel-service-1.0.war $SERVER_DIR
+cp -r $PRJ_DIR/example-project/target/example.war $SERVER_DIR
 
 echo
 echo "========================================================================"
@@ -249,10 +251,6 @@ echo "=                                                                      ="
 echo "=  You can now start the $PRODUCT with:                         ="
 echo "=                                                                      ="
 echo "=   $SERVER_BIN/standalone.sh                           ="
-echo "=                                                                      ="
-echo "=  Login into business central at:                                     ="
-echo "=                                                                      ="
-echo "=    http://localhost:8080/business-central  (u:erics / p:bpmsuite1!)  ="
 echo "=                                                                      ="
 echo "=  See README.md for general details to run the various demo cases.    ="
 echo "=                                                                      ="
@@ -285,7 +283,7 @@ set PROJECT_HOME=%~dp0
 set DEMO=YOUR-PRJECT-DEMO
 set AUTHORS=YOUR-NAME
 set PROJECT=YOUR-GIT-REPO
-set PRODUCT=JBoss BPM Suite
+set PRODUCT=JBOSS-PRODUCT-HERE
 set JBOSS_HOME=%PROJECT_HOME%target\jboss-eap-6.1
 set SERVER_DIR=%JBOSS_HOME%\standalone\deployments\
 set SERVER_CONF=%JBOSS_HOME%\standalone\configuration\
@@ -293,8 +291,8 @@ set SERVER_BIN=%JBOSS_HOME%\bin
 set SRC_DIR=%PROJECT_HOME%installs
 set SUPPORT_DIR=%PROJECT_HOME%support
 set PRJ_DIR=%PROJECT_HOME%projects
-set BPMS=jboss-bpms-installer-6.0.3.GA-redhat-1.jar
-set VERSION=6.0.3
+set INSTALLER=JBOSS-PRODUCT-INSTALLER.jar
+set VERSION=YOUR-VERSION
 
 REM wipe screen.
 cls
@@ -305,12 +303,11 @@ echo ##                                                             ##
 echo ##  Setting up the %DEMO%                          ##
 echo ##                                                             ##   
 echo ##                                                             ##   
-echo ##     ####  ####   #   #      ### #   # ##### ##### #####     ##
-echo ##     #   # #   # # # # #    #    #   #   #     #   #         ##
-echo ##     ####  ####  #  #  #     ##  #   #   #     #   ###       ##
-echo ##     #   # #     #     #       # #   #   #     #   #         ##
-echo ##     ####  #     #     #    ###  ##### #####   #   #####     ##
-echo ##                                                             ##   
+echo ##    ##### #####  ###   ####  ####   ####  ##### #   #  ###   ##
+echo ##      #   #   # #   # #     #       #   # #     ## ## #   #  ##
+echo ##      #   ####  #   #  ###   ###    #   # ###   # # # #   #  ##
+echo ##    # #   #   # #   #     #     #   #   # #     #   # #   #  ##
+echo ##    ###   ####   ###  ####  ####    ####  ####  #   #  ###   ##
 echo ##                                                             ##   
 echo ##  brought to you by,                                         ##   
 echo ##                     %AUTHORS%           ##
@@ -321,17 +318,17 @@ echo #################################################################
 echo.
 
 REM make some checks first before proceeding.	
-if exist %SRC_DIR%\%BPMS% (
+if exist %SRC_DIR%\%INSTALLER% (
 	echo Product sources are present...
 	echo.
 ) else (
-	echo Need to download %BPMS% package from the Customer Support Portal
+	echo Need to download %INSTALLER% package from the Customer Support Portal
 	echo and place it in the %SRC_DIR% directory to proceed...
 	echo.
 	GOTO :EOF
 )
 
-REM Move the old JBoss instance, if it exists, to the OLD position.
+REM Remove existing installation if found.
 if exist %JBOSS_HOME% (
 	echo - existing JBoss product install removed...
 	echo.
@@ -341,7 +338,7 @@ if exist %JBOSS_HOME% (
 REM Run installer.
 echo Product installer running now...
 echo.
-call java -jar %SRC_DIR%/%BPMS% %SUPPORT_DIR%\installation-bpms -variablefile %SUPPORT_DIR%\installation-bpms.variables
+call java -jar %SRC_DIR%/%INSTALLER% 
 
 if not "%ERRORLEVEL%" == "0" (
 	echo Error Occurred During %PRODUCT% Installation!
@@ -349,13 +346,13 @@ if not "%ERRORLEVEL%" == "0" (
 	GOTO :EOF
 )
 
-
+echo Example section: configure your installation here...
 echo.
-echo - setting up web services...
+
+echo Example section: build your project sources here...
 echo.
 call mvn clean install -f %PRJ_DIR%/pom.xml
-xcopy /Y /Q "%PRJ_DIR%\acme-demo-flight-service\target\acme-flight-service-1.0.war" "%SERVER_DIR%"
-xcopy /Y /Q "%PRJ_DIR%\acme-demo-hotel-service\target\acme-hotel-service-1.0.war" "%SERVER_DIR%"
+xcopy /Y /Q "%PRJ_DIR%\example-project\target\example.war" "%SERVER_DIR%"
 
 echo.
 echo ========================================================================
@@ -363,10 +360,6 @@ echo =                                                                      =
 echo =  You can now start the %PRODUCT% with:                         =
 echo =                                                                      =
 echo =   %SERVER_BIN%\standalone.bat                           =
-echo =                                                                      =
-echo =  Login into business central at:                                     =
-echo =                                                                      =
-echo =    http://localhost:8080/business-central  [u:erics / p:bpmsuite1!]  =
 echo =                                                                      =
 echo =  See README.md for general details to run the various demo cases.    =
 echo =                                                                      =

@@ -59,9 +59,9 @@ echo
 echo "   Adding main readme file."
 echo
 
-echo "JBoss $1 Quickstart Guide
+echo "Demo $1 Quickstart Guide
 ============================================================
-Demo based on JBoss [product-name] products.
+Demo based on [product-name] products.
 
 Setup and Configuration
 -----------------------
@@ -90,14 +90,14 @@ echo
 mkdir installs 
 echo 'In this directory you fill in this readme file to point the user
 to any software needed to run your demo. See below for example of 
-what you will find for our current JBoss product demos.
+what you will find for our current product demos.
 
 The init scripts that install your project will be looking in this
 directory for software that might be needed to install for your project
 to run on.
 
-=======================================================
-Download the following from the JBoss Customer Portal
+=========================================================
+Download the following product from the listed locations:
 
 * [insert-product] ([insert-product-file].zip)
 
@@ -117,9 +117,9 @@ echo 'This directory is for putting your projects source code into. The install 
 will then be pointed here to do any builds, copy of built source binaries to an 
 installed product server, etc.
 
-Most often in JBoss demo projects, the web applications, web services, and other
+Most often in demo projects, the web applications, web services, and other
 client jars will be created here in a maven project. After building the JAR / WAR
-would be copied into the JBoss application server.
+would be copied into the application server.
 ' > projects/README
 
 echo
@@ -139,7 +139,7 @@ echo
 mkdir -p docs/demo-images
 echo 'This directory contains any project documentation and you can place images
 of screenshots into the demo-images directory. We often link the images into our
-root level Readme.md for nice visual displays on github.com.
+root level Readme.md for nice visual displays in their repositories.
 ' > docs/README
 
 echo 
@@ -173,10 +173,10 @@ DEMO="YOUR-PROJECT-NAME-HERE"
 AUTHORS="YOUR-NAME-HERE"
 PROJECT="YOUR-GIT-URL-HERE"
 PRODUCT="YOUR-JBOSS-PRODUCT-HERE"
-JBOSS_HOME=./target/jboss-eap-6.1
-SERVER_DIR=$JBOSS_HOME/standalone/deployments/
-SERVER_CONF=$JBOSS_HOME/standalone/configuration/
-SERVER_BIN=$JBOSS_HOME/bin
+INSTALL_HOME=./target/jboss-eap-7.2
+SERVER_DIR=$INSTALL_HOME/standalone/deployments/
+SERVER_CONF=$INSTALL_HOME/standalone/configuration/
+SERVER_BIN=$INSTALL_HOME/bin
 SRC_DIR=./installs
 SUPPORT_DIR=./support
 PRJ_DIR=./projects
@@ -192,11 +192,11 @@ echo "##                                                              ##"
 echo "##  Setting up the ${DEMO}                           ##"
 echo "##                                                              ##"   
 echo "##                                                              ##"   
-echo "##    ##### #####  ###   ####  ####   ####  ##### #   #  ###    ##"
-echo "##      #   #   # #   # #     #       #   # #     ## ## #   #   ##"
-echo "##      #   ####  #   #  ###   ###    #   # ###   # # # #   #   ##"
-echo "##    # #   #   # #   #     #     #   #   # #     #   # #   #   ##"
-echo "##    ###   ####   ###  ####  ####    ####  ####  #   #  ###    ##"
+echo "##    ##### #   #  ####    ####  ####  #   #  ###               ##"
+echo "##      #   #   #  #       #   # #     ## ## #   #              ##"
+echo "##      #   #####  ###     #   # ###   # # # #   #              ##"
+echo "##      #   #   #  #       #   # #     #   # #   #              ##"
+echo "##      #   #   #  ####    ####  ####  #   #  ###               ##"
 echo "##                                                              ##"   
 echo "##                                                              ##"   
 echo "##  brought to you by,                                          ##"   
@@ -221,8 +221,8 @@ else
 fi
 
 # Remove old install if it exists.
-if [ -x $JBOSS_HOME ]; then
-	echo "  - existing JBoss product install removed..."
+if [ -x $INSTALL_HOME ]; then
+	echo "  - existing project install removed..."
 	echo
 	rm -rf target
 fi
@@ -284,10 +284,10 @@ set DEMO=YOUR-PRJECT-DEMO
 set AUTHORS=YOUR-NAME
 set PROJECT=YOUR-GIT-REPO
 set PRODUCT=JBOSS-PRODUCT-HERE
-set JBOSS_HOME=%PROJECT_HOME%target\jboss-eap-6.1
-set SERVER_DIR=%JBOSS_HOME%\standalone\deployments\
-set SERVER_CONF=%JBOSS_HOME%\standalone\configuration\
-set SERVER_BIN=%JBOSS_HOME%\bin
+set INSTALL_HOME=%PROJECT_HOME%target\jboss-eap-6.1
+set SERVER_DIR=%INSTALL_HOME%\standalone\deployments\
+set SERVER_CONF=%INSTALL_HOME%\standalone\configuration\
+set SERVER_BIN=%INSTALL_HOME%\bin
 set SRC_DIR=%PROJECT_HOME%installs
 set SUPPORT_DIR=%PROJECT_HOME%support
 set PRJ_DIR=%PROJECT_HOME%projects
@@ -303,11 +303,11 @@ echo ##                                                             ##
 echo ##  Setting up the %DEMO%                          ##
 echo ##                                                             ##   
 echo ##                                                             ##   
-echo ##    ##### #####  ###   ####  ####   ####  ##### #   #  ###   ##
-echo ##      #   #   # #   # #     #       #   # #     ## ## #   #  ##
-echo ##      #   ####  #   #  ###   ###    #   # ###   # # # #   #  ##
-echo ##    # #   #   # #   #     #     #   #   # #     #   # #   #  ##
-echo ##    ###   ####   ###  ####  ####    ####  ####  #   #  ###   ##
+echo ##    ##### #   #  ####    ####  ####  #   #  ###              ##
+echo ##      #   #   #  #       #   # #     ## ## #   #             ##
+echo ##      #   #####  ###     #   # ###   # # # #   #             ##
+echo ##      #   #   #  #       #   # #     #   # #   #             ##
+echo ##      #   #   #  ####    ####  ####  #   #  ###              ##
 echo ##                                                             ##   
 echo ##  brought to you by,                                         ##   
 echo ##                     %AUTHORS%           ##
@@ -329,8 +329,8 @@ if exist %SRC_DIR%\%INSTALLER% (
 )
 
 REM Remove existing installation if found.
-if exist %JBOSS_HOME% (
-	echo - existing JBoss product install removed...
+if exist %INSTALL_HOME% (
+	echo - existing project install removed...
 	echo.
 	rmdir /s /q target"
 )

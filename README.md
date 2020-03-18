@@ -22,7 +22,10 @@ Getting started with this template
 
 Supporting Articles
 -------------------
-[JBoss Evangelist - How To Create Simple, Consistent, Repeatable Demo Projects](http://www.schabell.org/2015/02/jboss-evangelist-howto-create-demo-projects.html)
+
+[Create demo project templates with one script (opensource.com)](https://opensource.com/article/20/1/initsh-script)
+
+[How To Create Simple, Consistent, Repeatable Demo Projects](http://www.schabell.org/2015/02/jboss-evangelist-howto-create-demo-projects.html)
 
 
 Released versions
